@@ -1,0 +1,404 @@
+/* Fuentes personali. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Títulos con Playfair */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Texto gral. con Open Sans */
+body, p, label, input, textarea, button, nav ul li a {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Color y fondo grales. */
+body {
+  color: #4e342e;
+  background-color: #fff8f0;
+  line-height: 1.6;
+}
+
+/* Header y navegación */
+/* Estilo general del header */
+header {
+  background-color: #e09720;
+  padding: 15px 20px;
+  color: #3e2723;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Contenedor principal que separa izq dcha */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Título a la izqa */
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Menú + carrito a la dcha*/
+.menu-carrito {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Menú */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #3e2723;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #bf360c;
+}
+
+/* Carrito con texto */
+.carrito-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carrito {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  color: #3e2723;
+}
+
+.contador {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #bf360c;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 50%;
+  user-select: none;
+}
+
+
+/* Seccion de portada */
+.portada {
+  background-image: url('../imagenes/miel-port.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 0 20px;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6);
+}
+
+.portada-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+.portada-text p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+/* Main y secciones */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Productos */
+#productos h2 {
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #6d4c41;
+  text-align: center;
+}
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff3e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(101,67,33,0.15);
+  width: 220px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(101,67,33,0.25);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #4e342e;
+}
+
+.card p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #6d4c41;
+}
+
+.precio {
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #bf360c;
+}
+
+.card button {
+    /* es un estilo base para cualquier boton dentro de card */
+  background-color: #bf360c;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+  flex: 1;
+}
+
+.card button:hover {
+  background-color: #d84315;
+}
+
+/* Botón comprar */
+button.comprar {
+  background-color: #bf360c;
+  color: white;
+}
+
+button.comprar:hover {
+  background-color: #d84315;
+}
+
+/* Botón agregar al carrito */
+button.agregar-carrito {
+  background-color: #76b678;
+  color: #000;
+}
+
+button.agregar-carrito:hover {
+  background-color: #3bf344;
+}
+
+.botones {
+/* boto: los coloca en fila y con espacio */
+  display: flex;
+  gap: 10px;   /* espacio entre bot */
+  justify-content: center;  /* centrado horiz */
+  margin-top: 10px;
+}
+
+.botones button {
+  flex: 1;  /* para que los bot tengan el mismo ancho */
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+button.comprar {
+  background-color: #bf360c;
+  color: white;
+}
+
+button.comprar:hover {
+  background-color: #d84315;
+}
+
+button.agregar-carrito {
+  background-color: #a5d6a7;
+  color: #000;
+}
+
+button.agregar-carrito:hover {
+  background-color: #81c784;
+}
+
+
+/* Reseñas */
+#reseñas {
+  margin-top: 60px;
+}
+
+#reseñas h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif; /* Tit res. */
+  font-size: 2rem;
+  color: #6d4c41;
+  margin-bottom: 25px;
+}
+
+.grid-reseñas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.grid-reseñas > div {
+  background-color: #fff3e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(101,67,33,0.15);
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif; /* Txt res */
+  color: #4e342e;
+  text-align: center;
+}
+
+.grid-reseñas p {
+  margin-top: 10px;
+  font-weight: 400;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  color: #6d4c41;
+}
+
+/* Contacto */
+#contacto {
+  margin-top: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contacto h2 {
+  font-family: 'Playfair Display', serif; /* Tit cont. */
+  font-size: 2rem;
+  text-align: center;
+  color: #6d4c41;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e342e;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #bf360c;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  background-color: #bf360c;
+  color: white;
+  font-weight: 700;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button[type="submit"]:hover {
+  background-color: #d84315;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 50px;
+  background-color: #e09720;
+  color: #3e2723;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .productos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+

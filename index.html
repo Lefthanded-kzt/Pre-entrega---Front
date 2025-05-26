@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Dulce Colmena - Miel Artesanal</title>
+  <!-- Fuentes Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="imagenes/favicon.png" type="image/x-icon" />
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <h1>Mi Dulce Colmena</h1>
+
+    <div class="menu-carrito">
+      <nav>
+        <ul>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#reseñas">Reseñas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="carrito-box">
+        <div class="carrito">
+          🛒 <span class="contador">0</span>
+        </div>
+        <span class="carrito-texto">Tu carrito</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <section class="portada">
+    <div class="portada-text">
+      <h2>Miel artesanal 100% natural</h2>
+      <p>Directo de la colmena a tu mesa</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="productos">
+      <h2>Productos</h2>
+      <div class="productos">
+        <div class="card">
+          <img src="imagenes/miel1.jpg" alt="Miel de flores silvestres" />
+          <h3>Miel de flores silvestres</h3>
+          <p>500g de pura dulzura natural</p>
+          <p class="precio">$1600</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+          <button class="comprar">Comprar</button>
+        </div>
+        <div class="card">
+          <img src="imagenes/miel2.png" alt="Miel de eucalipto" />
+          <h3>Miel de eucalipto</h3>
+          <p>450g con sabor intenso y aromático</p>
+          <p class="precio">$1650</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+          <button class="comprar">Comprar</button>
+        </div>
+        <div class="card">
+          <img src="imagenes/miel3.png" alt="Miel multifloral" />
+          <h3>Miel multifloral</h3>
+          <p>400g, variedad y sabor en cada gota</p>
+          <p class="precio">$1550</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+          <button class="comprar">Comprar</button>
+        </div>
+        <div class="card">
+          <img src="imagenes/miel4.png" alt="Miel con propóleo" />
+          <h3>Miel con propóleo</h3>
+          <p>350g, beneficios naturales para la salud</p>
+          <p class="precio">$1700</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+          <button class="comprar">Comprar</button>
+        </div>
+        <div class="card">
+          <img src="imagenes/miel5.png" alt="Miel de lavanda" />
+          <h3>Miel de lavanda</h3>
+          <p>300g, aroma delicado y dulce</p>
+          <p class="precio">$1750</p>
+          <div class="botones"></div>
+          <button class="agregar-carrito">Agregar al carrito</button>
+          <button class="comprar">Comprar</button>
+        </div>
+      </div>
+    </section>
+
+  <section id="reseñas">
+    <h2>Reseñas de Clientes</h2>
+    <div class="grid-reseñas">
+      <blockquote>
+        <p>⭐⭐⭐<br/>¡La miel es deliciosa y llegó con mucha demora.</p>
+        <footer>— Ana M.</footer>
+      </blockquote>
+      <blockquote>
+        <p>⭐⭐<br/>Buen sabor, pero el frasco llegó con una pequeña fuga.</p>
+        <footer>— Luis G.</footer>
+      </blockquote>
+      <blockquote>
+        <p>⭐⭐⭐⭐<br/>Muy buen producto, lo recomiendo para endulzar el té.</p>
+        <footer>— Carla P.</footer>
+      </blockquote>
+      <blockquote>
+        <p>⭐⭐⭐⭐⭐<br/>Producto de excelente calidad, Gracias.</p>
+        <footer>— Ariel M.</footer>
+      </blockquote>
+            <blockquote>
+        <p>⭐⭐⭐<br/>Excelente atención, mucha demora en el envio</p>
+        <footer>— Fabian J.</footer>
+      </blockquote>
+            <blockquote>
+        <p>⭐<br/>Lamentablemente me llego el frasco roto.</p>
+        <footer>— Marta P.</footer>
+      </blockquote>
+    </div>
+  </section>
+
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <form action="https://formspree.io/f/XXXX aca tendriamos que poner el codigo de froms" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Correo:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+    <script>
+  let contador = 0;
+
+  // Selec todos los botones que agregan al carrito
+  const botonesAgregar = document.querySelectorAll(".agregar-carrito");
+
+  // Selec el contador en el ícono del carrito
+  const contadorCarrito = document.querySelector(".contador");
+
+  // Cada vez que se hace clic en un botón, sumamos 1
+  botonesAgregar.forEach(boton => {
+    boton.addEventListener("click", () => {
+      contador++;
+      contadorCarrito.textContent = contador;
+    });
+  });
+</script>
+
+  <footer>
+    <p>&copy; 2025 Mi Dulce Colmena</p>
+  </footer>
+
+</body>
+</html>
