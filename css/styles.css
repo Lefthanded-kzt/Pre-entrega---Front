@@ -26,6 +26,18 @@ body {
 }
 
 /* Header y navegación */
+
+.logo-nombre {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
 /* Estilo general del header */
 header {
   background-color: #e09720;
@@ -45,8 +57,8 @@ header {
 
 /* Título a la izqa */
 header h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -82,6 +94,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
 .carrito {
@@ -89,6 +102,26 @@ nav ul li a:hover {
   cursor: pointer;
   position: relative;
   color: #3e2723;
+}
+
+.carrito-texto {
+  display: none;
+  position: absolute;
+  top: 120%; /* debajo del carrito */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff8e1;
+  color: #3e2723;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.carrito:hover .carrito-texto {
+  display: block;
 }
 
 .contador {
@@ -274,7 +307,6 @@ button.agregar-carrito:hover {
   background-color: #81c784;
 }
 
-
 /* Reseñas */
 #reseñas {
   margin-top: 60px;
@@ -408,4 +440,67 @@ footer {
     gap: 15px; 
     justify-content: center;
   }
+}
+
+/* Redes sociales en el footer */
+footer .redes-sociales {
+  margin-top: 10px;
+}
+
+footer .redes-sociales a {
+  margin: 0 10px;
+  font-size: 22px;
+  color: #000; /* negro */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+footer .redes-sociales a:hover {
+  color: #555; /* gris oscuro cuando el cl pasa el mouse */
+  transform: scale(1.2);
+}
+
+
+/* Botones flotantes wsp y subir al top */
+.btn-subir, .btn-wsp {
+  position: fixed;
+  z-index: 999;
+  background-color: #ffcc00;
+  color: black;
+  width: 48px;  
+  height: 48px;  
+  line-height: 48px; 
+  border-radius: 50%;
+  font-size: 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  text-align: center;
+  text-decoration: none;
+  padding: 0;
+}
+
+.btn-subir {
+  width: 36px;      /* achic o agrand el tamaño del bot */
+  height: 36px;
+  line-height: 36px;
+  font-size: 18px;
+  bottom: 140px;
+  right: 20px;
+  display: none;
+  background-color: #ffcc00;
+  color: black;
+}
+
+.btn-wsp {
+  width: 56px;      /* achic o agrand el tamaño del bot */
+  height: 56px;
+  line-height: 56px;
+  font-size: 28px;
+  bottom: 60px;
+  right: 20px;
+  color: white;
+  background-color: #25D366;
+}
+
+.btn-subir:hover, .btn-wsp:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
 }
