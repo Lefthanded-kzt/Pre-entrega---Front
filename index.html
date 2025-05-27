@@ -8,12 +8,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" href="imagenes/favicon.png" type="image/x-icon" />
+  <!-- ico de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 </head>
 <body>
 
 <header>
   <div class="header-container">
-    <h1>Mi Dulce Colmena</h1>
+    <div class="logo-nombre">
+      <img src="imagenes/logo-colmena.png" alt="Logo Mi Dulce Colmena" class="logo" />
+      <h1>Mi Dulce Colmena</h1>
+    </div>
 
     <div class="menu-carrito">
       <nav>
@@ -27,11 +33,12 @@
       <div class="carrito-box">
         <div class="carrito">
           🛒 <span class="contador">0</span>
+          <span class="carrito-texto">Tu carrito</span>
         </div>
-        <span class="carrito-texto">Tu carrito</span>
       </div>
+      
     </div>
-  </div>
+  </div> 
 </header>
 
   <section class="portada">
@@ -154,9 +161,28 @@
   });
 </script>
 
-  <footer>
-    <p>&copy; 2025 Mi Dulce Colmena</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Mi Dulce Colmena</p>
+  <div class="redes-sociales">
+    <a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/" target="_blank" title="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+  </div>
+</footer>
+
+<!-- Botón flotante para subir -->
+<a href="#" class="btn-subir" title="Volver arriba"><i class="fas fa-chevron-up"></i></a>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/549xxxxxxxx" target="_blank" class="btn-wsp" title="Escribinos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const btnSubir = document.querySelector('.btn-subir');
+  window.addEventListener('scroll', () => {
+    btnSubir.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+</script>
+
 
 </body>
 </html>
