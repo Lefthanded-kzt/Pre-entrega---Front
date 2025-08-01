@@ -210,7 +210,9 @@ function initSlider() {
   const cards = document.querySelectorAll('.reseña-card');
   const indicadoresContainer = document.createElement('div');
   indicadoresContainer.className = 'slider-indicadores';
-  
+  let intervalo;
+  let isPaused = false;
+
   // Crea indicadores
   cards.forEach((_, index) => {
     const indicador = document.createElement('div');
@@ -223,26 +225,46 @@ function initSlider() {
     });
     indicadoresContainer.appendChild(indicador);
   });
-  
+
   slider.parentNode.insertBefore(indicadoresContainer, slider.nextSibling);
 
-  // Actualiza indicadores al hacer scroll
+  // Auto-desplazamiento cada 5 segundos
+  function startAutoScroll() {
+    intervalo = setInterval(() => {
+      if (!isPaused && slider.scrollLeft < slider.scrollWidth - slider.offsetWidth) {
+        slider.scrollBy({
+          left: slider.offsetWidth,
+          behavior: 'smooth'
+        });
+      } else {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+    }, 5000);
+  }
+
+  // Pausar al interactuar
+  slider.addEventListener('mouseenter', () => isPaused = true);
+  slider.addEventListener('mouseleave', () => isPaused = false);
+  slider.addEventListener('touchstart', () => isPaused = true);
+  slider.addEventListener('touchend', () => isPaused = false);
+
+  // Actualizar indicadores
   slider.addEventListener('scroll', () => {
     const activeIndex = Math.round(slider.scrollLeft / slider.offsetWidth);
     document.querySelectorAll('.slider-indicador').forEach((ind, idx) => {
       ind.classList.toggle('activo', idx === activeIndex);
     });
   });
-}
 
-// Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', initSlider);
+  startAutoScroll();
+}
 // Sliders finaliza arriba
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
   initEventListeners();
   renderizarCarrito();
+  initSlider();
   
   // Animaciones para las tarjetas
   const cards = document.querySelectorAll('.card, .reseña-card');
